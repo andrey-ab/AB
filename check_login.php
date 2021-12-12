@@ -1,6 +1,8 @@
 <?php
     session_start();
+    //echo getenv("MYAPP_CONFIG");
     include(getenv("MYAPP_CONFIG"));
+
 ?>
 <html>
     <head>
@@ -17,8 +19,8 @@
             ";
 
             $conn = mysqli_connect($DB_URL,$DB_USER,$DB_PWD,$DB_NAME);
-            // Нудная, но необходимая процедура передачи параметров 
-            // в sql выражение, что гарантирует защиту от инжекции sql
+            //Нудная, но необходимая процедура передачи параметров 
+            //в sql выражение, что гарантирует защиту от инжекции sql
             $statement = mysqli_prepare($conn, $sql);
             mysqli_stmt_bind_param($statement,"ss",$user,$hash);
             mysqli_stmt_execute($statement);
