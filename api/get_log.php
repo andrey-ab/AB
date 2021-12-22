@@ -12,7 +12,8 @@
     //echo($user);
 
     //echo getenv("MYAPP_CONFIG");
-    include(getenv("MYAPP_CONFIG"));
+    //include(getenv("MYAPP_CONFIG"));
+    include('/var/www/html/params.php');
 
 
     //echo($user);
